@@ -1,3 +1,33 @@
-body {
+body, html {
 	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 25px;
+}
+
+table{
+	text-align: center;
+	border: 1.5px, solid, black;
+	border-collapse: collapse;
+	border-spacing: 25px, 50px;
+}
+
+.td-importante{
+	color: orangered;
+	text-align: center;
+}
+
+h1{
+	font-weight: bold;
+	background-color: wheat;
+	color: blue;
+	font-size: 1.8rem;
+	padding: .35rem;
+	text-align: center;
+	border: .35rem hidden red;
+	border-radius: 25px;
+	box-shadow: 8px 8px 10px aqua;
+	text-shadow: 5px 5px 7px lightblue;
+	width: 100%;
+	position: fixed;
+	top: 0;
 }
