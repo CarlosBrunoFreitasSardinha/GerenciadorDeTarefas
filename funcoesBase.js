@@ -9,6 +9,13 @@
   }
 
   function reset() {
-    var ul = document.querySelector("#items");
-    ul.innerHTML = ""; 
+    document.calcform.display.value = ''
+     delete lista;
+  }
+  function addInfo(){
+    alert("fsfsdf")
+    var textoDaInput = document.getElementById('tarefa');
+    var arr = str.split("em");
+    lista.push({arr[0],arr[1],false});
+    document.getElementById('tarefa').value='222'
   }
