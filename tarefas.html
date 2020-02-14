@@ -4,15 +4,28 @@
 		<meta charset="utf-8">
 		<title>Gerenciador de tarefas</title>
 		<link href="estilos.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript">
+		var lista= [];
+	  function reset() {
+	     document.forme_ini.tarefa.value = '';
+	     delete lista;
+	  }
+	  function addInfo(){
+	    var textoDaInput =  document.forms[0].tarefa.value;
+	    var arr = textoDaInput.split("em");
+	    lista.push([arr[0],arr[1],false]);
+	      document.forms[0].tarefa.value='';
+	  }
+	</script>
 	</head>
 	<body>
 		<div>
 			<h1 id="h1">Gerenciador de tarefas</h1>
 		</div>
 		<div>
-			<form>
-				<input type="text">
-				<button>Salvar</button>
+			<form id="forme_ini" onsubmit="return false">
+				<input type="text" id="tarefa" name="tarefa">
+				<button onclick="addInfo()">Salvar</button>
 			</form>
 		</div>
 		<div>
