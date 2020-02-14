@@ -26,12 +26,14 @@
 		<div>
 			<h1 id="h1">Gerenciador de tarefas</h1>
 		</div>
+		<div id="container">
 		<div>
 			<form id="forme_ini" onsubmit="return false">
-				<input type="text" id="tarefa" name="tarefa">
-				<button onclick="addInfo()">Salvar</button>
+				<input id="input" placeholder=" Adicionar tarefa" type="text" id="tarefa" name="tarefa">
+				<button id="botao" onclick="addInfo()">Salvar</button>
 			</form>
 		</div>
+		<br>
 		<div>
 			<table id="tabela" border="1">
 				<tr class="tr">
@@ -46,6 +48,7 @@
 					<td class="td-importante"><button>X</button></td>
 				</tr>
 			</table>
+		</div>
 		</div>
 	</body>
 </html>
