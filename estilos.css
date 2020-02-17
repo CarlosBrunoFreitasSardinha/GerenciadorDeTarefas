@@ -18,6 +18,8 @@ table{
 .td-importante{
 	background-color: orange;
 	text-align: center;
+	letter-spacing: 1px;
+	align-content: center;
 }
 
 h1{
@@ -32,7 +34,6 @@ h1{
 	box-shadow: 3px 3px 3px grey;
 	text-shadow: 5px 5px 7px lightblue;
 	width: 98%;
-	top: 0;
 }
 
 button{
@@ -42,6 +43,8 @@ button{
 	font-size: 1rem;
 	color: black;
 	background-color: burlywood;
+	letter-spacing: 1px;
+	box-sizing: border-box;
 }
 
 button:hover{
@@ -55,7 +58,7 @@ button:hover{
 	font-size: .8rem;
 	background-color: khaki;
 	color: green;
-	margin-bottom: auto;
+	margin: 10px;
 }
 
 #button-td-confirm:hover{
@@ -69,7 +72,7 @@ button:hover{
 	font-size: .8rem;
 	background-color: khaki;
 	color: red;
-	margin-bottom: auto;
+	margin: 10px;
 }
 
 #button-td-cancel:hover{
@@ -95,4 +98,10 @@ input{
 	box-shadow: 8px 8px 10px black;
 	background-color: ivory;
 	padding-bottom: 20px;
+}
+
+#done-activity{
+	text-decoration: line-through;
+	background-color: green;
+	color: black;
 }
