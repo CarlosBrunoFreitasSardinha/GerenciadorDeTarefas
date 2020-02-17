@@ -2,6 +2,7 @@ body, html {
 	text-align: center;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 25px;
+	background-color: lightgray;
 }
 
 table{
@@ -11,23 +12,24 @@ table{
 	border-spacing: 25px, 50px;
 	margin: auto;
 	width: 600px;
+	margin: auto;
 }
 
 .td-importante{
-	color: orangered;
+	background-color: orange;
 	text-align: center;
 }
 
 h1{
 	font-weight: bold;
-	background-color: wheat;
+	background-color: lightyellow;
 	color: steelblue;
 	font-size: 1.8rem;
 	padding: .35rem;
 	text-align: center;
 	border: .35rem hidden red;
 	border-radius: 25px;
-	box-shadow: 8px 8px 10px grey;
+	box-shadow: 3px 3px 3px grey;
 	text-shadow: 5px 5px 7px lightblue;
 	width: 98%;
 	top: 0;
@@ -38,7 +40,40 @@ button{
 	border-radius: 50px;
 	text-align: center;
 	font-size: 1rem;
-	color: gold;
+	color: black;
+	background-color: burlywood;
+}
+
+button:hover{
+	background-color: dodgerblue;
+}
+
+#button-td-confirm{
+	border: .75rem;
+	border-radius: 100px;
+	text-align: center;
+	font-size: .8rem;
+	background-color: khaki;
+	color: green;
+	margin-bottom: auto;
+}
+
+#button-td-confirm:hover{
+	background-color: lightgreen;
+}
+
+#button-td-cancel{
+	border: .75rem;
+	border-radius: 100px;
+	text-align: center;
+	font-size: .8rem;
+	background-color: khaki;
+	color: red;
+	margin-bottom: auto;
+}
+
+#button-td-cancel:hover{
+	background-color: lightcoral;
 }
 
 input{
@@ -48,6 +83,7 @@ input{
 	-webkit-border-radius: 50px;
 	-moz-border-radius: 50px;
 	border-radius: 50px;
+	border-color: grey;
 }
 
 #container{
@@ -57,4 +93,6 @@ input{
 	border: 1px hidden;
 	border-radius: 25px;
 	box-shadow: 8px 8px 10px black;
+	background-color: ivory;
+	padding-bottom: 20px;
 }
