@@ -3,6 +3,7 @@ body, html {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 25px;
 	background-color: lightgray;
+	display: grid;
 }
 
 table{
@@ -26,7 +27,7 @@ h1{
 	font-weight: bold;
 	background-color: lightyellow;
 	color: steelblue;
-	font-size: 1.8rem;
+	font-size: 2rem;
 	padding: .35rem;
 	text-align: center;
 	border: .35rem hidden red;
@@ -45,10 +46,12 @@ button{
 	background-color: burlywood;
 	letter-spacing: 1px;
 	box-sizing: border-box;
+	transition: transform 1s;
 }
 
 button:hover{
 	background-color: dodgerblue;
+	transform: scale(1.1);
 }
 
 .button-td-confirm{
@@ -59,10 +62,12 @@ button:hover{
 	background-color: khaki;
 	color: green;
 	margin: 10px;
+	transition: transform 2s;
 }
 
 .button-td-confirm:hover{
 	background-color: lightgreen;
+	transform: scale(1.7);
 }
 
 .button-td-cancel{
@@ -73,10 +78,12 @@ button:hover{
 	background-color: khaki;
 	color: red;
 	margin: 10px;
+	transition: transform 2s;
 }
 
 .button-td-cancel:hover{
 	background-color: lightcoral;
+	transform: scale(1.7);
 }
 
 input{
@@ -87,6 +94,12 @@ input{
 	-moz-border-radius: 50px;
 	border-radius: 50px;
 	border-color: grey;
+	transition: transform 1s;
+	margin-bottom: 20px;
+}
+
+input:hover{
+	transform: scale(1.7);
 }
 
 #container{
