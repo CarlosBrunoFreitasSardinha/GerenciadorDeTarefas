@@ -51,7 +51,7 @@ button:hover{
 	background-color: dodgerblue;
 }
 
-#button-td-confirm{
+.button-td-confirm{
 	border: .75rem;
 	border-radius: 100px;
 	text-align: center;
@@ -61,11 +61,11 @@ button:hover{
 	margin: 10px;
 }
 
-#button-td-confirm:hover{
+.button-td-confirm:hover{
 	background-color: lightgreen;
 }
 
-#button-td-cancel{
+.button-td-cancel{
 	border: .75rem;
 	border-radius: 100px;
 	text-align: center;
@@ -75,7 +75,7 @@ button:hover{
 	margin: 10px;
 }
 
-#button-td-cancel:hover{
+.button-td-cancel:hover{
 	background-color: lightcoral;
 }
 

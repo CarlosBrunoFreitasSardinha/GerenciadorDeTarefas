@@ -30,8 +30,8 @@
 		var celula4 = linha.insertCell(3);
 		celula1.innerHTML = lista[0][1];
   		celula2.innerHTML = lista[0][0];
-  		celula3.innerHTML = "<button>V</button>";
-  		celula4.innerHTML = "<button>X</button>";
+  		celula3.innerHTML = "<button class='button-td-confirm'>V</button>";
+  		celula4.innerHTML = "<button class='button-td-cancel'>X</button>";
 	}
 	</script>
 	</head>
@@ -51,12 +51,6 @@
 					<td class="td-importante">Data</td>
 					<td class="td-importante">Tarefa</td>
 					<td colspan="2" class="td-importante">Status</td>
-				</tr>
-				<tr class="tr">
-					<td class="td"></td>
-					<td class="td"></td>
-					<td class="td-importante"><button id="button-td-confirm">V</button></td>
-					<td class="td-importante"><button id="button-td-cancel">X</button></td>
 				</tr>
 			</table>
 		</div>
