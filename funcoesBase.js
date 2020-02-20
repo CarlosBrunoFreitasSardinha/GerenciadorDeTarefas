@@ -1,3 +1,4 @@
+
   class Tarefa{
     constructor(data, informacao, situacao){
       this.data = data;
@@ -17,61 +18,56 @@
       return this.situacao;
     }
   }
-
-  function add() {
-    var val = document.querySelector('#newItem').value;
-    if((val !== undefined) && (val !== "")) {
-      var ul = document.querySelector("#items");
-      var newItem = document.createElement("li");
-      newItem.textContent = val;
-      ul.append(newItem);
+    //limpa os dados do local localStoragee recarrega a pagina
+    function resetdata() {
+        localStorage.clear();
+        location.reload();
     }
-  }
-
-  function reset() {
-    document.calcform.display.value = ''
-     delete lista;
-  }
-
+    //se o localStorage ja tiver os dados preenche a tabela com eles
+    function verificaStorage() {
+        if(localStorage.length > 0)insertTable();
+    }
+//função para armazenar dados no localStorage e settar na tabela a partir da posição do dado inserido no localStorage
   function addInfo(){
-    a = localStorage.length;
-    i = 0;
-    while (i < localStorage.length){
-      i = i+1;}
-
-    alert("Adicionado")
 
     let tarefa = document.getElementById('input').value;
     arr = tarefa.split("em");
-
-
-    tarefa = new Tarefa(arr[1], arr[0], false);
-
+    tarefa = new Tarefa(arr[1], arr[0], undefined);
 
     const string = JSON.stringify(tarefa);
+    localStorage.setItem('tarefa' + localStorage.length, string);
 
-    localStorage.setItem('tarefa' + i, string)
-
-    busca = localStorage.getItem('tarefa')
-    passa = JSON.parse(busca);
-
-    document.getElementById('input').value=""
+    inserirLinha(localStorage.length-1);
+    document.getElementById('input').value="";
   }
-
-  function adicionarLinhaTabela(){
-    onload.call()
-    busca = localStorage.getItem('tarefa')
+  //função para inserir dados do localStorage na tabela
+  function inserirLinha(i){
+    busca = localStorage.getItem('tarefa'+i)
     passa = JSON.parse(busca);
-
-    var tabela = document.getElementById('tabela');
-		var numeroLinhas = tabela.rows.length;
-		var linha = tabela.insertRow();
-		var celula1 = linha.insertCell(0);
-		var celula2 = linha.insertCell(1);
-		var celula3 = linha.insertCell(2);
-		var celula4 = linha.insertCell(3);
-		celula1.innerHTML = passa.Tarefa[1];
-  	celula2.innerHTML = passa.Tarefa[0];
-  	celula3.innerHTML = "<button class='button-td-confirm'>V</button>";
-  	celula4.innerHTML = "<button class='button-td-cancel'>X</button>";
+		var linha = document.getElementById('tabela').insertRow();
+		linha.insertCell(0).innerHTML = passa["data"];
+  	linha.insertCell(1).innerHTML = passa["informacao"];
+  	linha.insertCell(2).innerHTML = "<button class='button-td-confirm' onclick='taxarLinha(this)'>V</button>";
+  	linha.insertCell(3).innerHTML = "<button class='button-td-cancel' onclick='redLinha(this)'>X</button>";
+    // if (passa["situacao"]) taxarLinha(linha);
+    // else if(passa["situacao"]==false) taxarLinha(linha);
+  }
+//função pra inserir valores do localStorage na tabela
+  function insertTable(){
+		var linhas = document.getElementById('tabela').rows;
+		for (i = 0;i<linhas.length; i++){
+      inserirLinha( i);
+		}
+	}
+  // funcao seta padrão concluído
+  function taxarLinha(linha) {
+    pai = linha.parentNode.parentNode;
+    pai.style.textDecoration = 'line-through';
+    pai.style.background = 'none';
+  }
+  // funcao seta padrão não concluído
+  function redLinha(linha) {
+    pai = linha.parentNode.parentNode;
+    pai.style.background = 'red';
+    pai.style.textDecoration = 'none';
   }
