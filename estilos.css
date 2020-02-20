@@ -112,9 +112,3 @@ input:hover{
 	background-color: ivory;
 	padding-bottom: 20px;
 }
-
-#done-activity{
-	text-decoration: line-through;
-	background-color: green;
-	color: black;
-}

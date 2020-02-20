@@ -25,12 +25,13 @@
     }
     //se o localStorage ja tiver os dados preenche a tabela com eles
     function verificaStorage() {
-        if(localStorage.length > 0)insertTable();
+        if(localStorage.length >= 1)insertTable();
     }
 //função para armazenar dados no localStorage e settar na tabela a partir da posição do dado inserido no localStorage
   function addInfo(){
 
     let tarefa = document.getElementById('input').value;
+
     arr = tarefa.split("em");
     tarefa = new Tarefa(arr[1], arr[0], undefined);
 
@@ -39,7 +40,8 @@
 
     inserirLinha(localStorage.length-1);
     document.getElementById('input').value="";
-  }
+    alert('Tarefa adicionada');
+}
   //função para inserir dados do localStorage na tabela
   function inserirLinha(i){
     busca = localStorage.getItem('tarefa'+i)
@@ -63,7 +65,7 @@
   function taxarLinha(linha) {
     pai = linha.parentNode.parentNode;
     pai.style.textDecoration = 'line-through';
-    pai.style.background = 'none';
+    pai.style.background = 'lightgreen';
   }
   // funcao seta padrão não concluído
   function redLinha(linha) {
