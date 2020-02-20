@@ -11,29 +11,8 @@
 	     document.forme_ini.tarefa.value = '';
 	     delete lista;
 	  }
-
-	  function addInfo(){
-	    var textoDaInput =  document.forms[0].tarefa.value;
-	    var arr = textoDaInput.split("em");
-	    lista.push([arr[0],arr[1],false]);
-	      document.forms[0].tarefa.value='';
-	      adicionarLinhaTabela();
-	  }
-
-	  function adicionarLinhaTabela(){
-		var tabela = document.getElementById('tabela');
-		var numeroLinhas = tabela.rows.length;
-		var linha = tabela.insertRow();
-		var celula1 = linha.insertCell(0);
-		var celula2 = linha.insertCell(1);
-		var celula3 = linha.insertCell(2);
-		var celula4 = linha.insertCell(3);
-		celula1.innerHTML = lista[0][1];
-  		celula2.innerHTML = lista[0][0];
-  		celula3.innerHTML = "<button class='button-td-confirm'>V</button>";
-  		celula4.innerHTML = "<button class='button-td-cancel'>X</button>";
-	}
 	</script>
+	<script src="funcoesBase.js"></script>
 	</head>
 	<body>
 		<div id="container">
