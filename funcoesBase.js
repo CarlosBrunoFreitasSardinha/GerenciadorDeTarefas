@@ -1,4 +1,3 @@
-
   class Tarefa{
     constructor(data, informacao, situacao){
       this.data = data;
