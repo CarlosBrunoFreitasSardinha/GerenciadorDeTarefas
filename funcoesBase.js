@@ -29,19 +29,32 @@
     function verificaStorage() {
         if(localStorage.length >= 1)insertTable();
     }
-//função para armazenar dados no localStorage e settar na tabela a partir da posição do dado inserido no localStorage
+//função para armazenar dados no localStorage e settar na tabela a partir da posição do dado inserido no localStorage e tratamento de dados
   function addInfo(){
 
-    let tarefa = document.getElementById('input').value;
+    var tarefa = document.getElementById('input').value;
+
+    if(tarefa != ""){
 
     arr = tarefa.split("em");
-    tarefa = new Tarefa(arr[1], arr[0], false);
 
-    const string = JSON.stringify(tarefa);
-    localStorage.setItem('tarefa' + localStorage.length, string);
+      if(arr[1] != undefined){
+        tarefa = new Tarefa(arr[1], arr[0], false);
 
-    inserirLinha(localStorage.length-1);
-    document.getElementById('input').value="";
+        const string = JSON.stringify(tarefa);
+        localStorage.setItem('tarefa' + localStorage.length, string);
+
+        inserirLinha(localStorage.length-1);
+        document.getElementById('input').value="";
+        alert('Tarefa adicionada');}
+
+      else{
+        alert('Formato errado!')
+      }
+    }
+    else{
+      alert('Adicione uma tarefa')
+    }
 }
   //função para inserir dados do localStorage na tabela
   function inserirLinha(i){
