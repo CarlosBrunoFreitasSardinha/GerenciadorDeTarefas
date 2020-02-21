@@ -16,6 +16,9 @@
     getSituacao(){
       return this.situacao;
     }
+    setSituacao(bool){
+      return this.situacao = bool;
+    }
   }
     //limpa os dados do local localStoragee recarrega a pagina
     function resetdata() {
@@ -32,7 +35,7 @@
     let tarefa = document.getElementById('input').value;
 
     arr = tarefa.split("em");
-    tarefa = new Tarefa(arr[1], arr[0], undefined);
+    tarefa = new Tarefa(arr[1], arr[0], false);
 
     const string = JSON.stringify(tarefa);
     localStorage.setItem('tarefa' + localStorage.length, string);
@@ -48,10 +51,9 @@
 
 		linha.insertCell(0).innerHTML = passa["data"];
   	linha.insertCell(1).innerHTML = passa["informacao"];
-  	linha.insertCell(2).innerHTML = "<button class=\"button-td-confirm\" id=\"tarefa"+i+"\" onclick=\"taxarLinha(this, 'tarefa"+i+")\">V</button>";
+  	linha.insertCell(2).innerHTML = "<button class=\"button-td-confirm\" onclick=\"taxarLinha(this, 'tarefa"+i+"')\">V</button>";
   	linha.insertCell(3).innerHTML = "<button class=\"button-td-cancel\" id=\"tarefa"+i+"\" onclick=\"redLinha(this, 'tarefa"+i+"')\">X</button>";
-    // if (passa["situacao"]) taxarLinha(linha);
-    // else if(passa["situacao"]==false) taxarLinha(linha);
+    if (passa["situacao"]) taxarLinha(linha);
   }
 //função pra inserir valores do localStorage na tabela
   function insertTable(){
@@ -65,7 +67,8 @@
     pai = linha.parentNode.parentNode;
     pai.style.textDecoration = 'line-through';
     pai.style.background = 'lightgreen';
-    var itens = document.getElementById(ident).disabled = true;
+    linha.disabled = true;
+    document.getElementById(ident).disabled = true;
   }
   // funcao seta padrão não concluído
   function redLinha(linha, ident) {
